@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Intraday Trade Planner</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+  <header>
+    <h1>📊 Intraday Trade Planner (India)</h1>
+    <p>Plan trades efficiently with live NSE prices, risk management, and projected capital.</p>
+  </header>
+
+  <main>
+    <div class="main-content">
+      <!-- Input Section -->
+      <section class="input-card">
+        <div class="input-group">
+          <label>Stock Symbol</label>
+          <input id="stock" placeholder="e.g., SBIN" />
+        </div>
+        <div class="input-group">
+          <label>Capital (₹)</label>
+          <input id="capital" type="number" placeholder="Your capital" />
+        </div>
+        <div class="input-group">
+          <label>Risk per Trade (₹)</label>
+          <input id="risk" type="number" placeholder="Risk" />
+        </div>
+        <div class="input-group">
+          <label>Risk-Reward Ratio</label>
+          <input id="rr" type="number" placeholder="e.g., 2" />
+        </div>
+        <button id="calculateBtn" onclick="calculateTrade()">
+          <i class="fa-solid fa-calculator"></i> Calculate Trade
+        </button>
+        <div id="loader" class="loader" style="display: none;"></div>
+      </section>
+
+      <!-- Result Section -->
+      <section class="result-card">
+        <h2>Trade Details</h2>
+        <div class="result-grid">
+          <div><strong>Entry Price:</strong> ₹<span id="entry">-</span></div>
+          <div><strong>Quantity:</strong> <span id="qty">-</span></div>
+          <div><strong>Stop Loss:</strong> ₹<span id="sl">-</span></div>
+          <div><strong>Target:</strong> ₹<span id="target">-</span></div>
+          <div><strong>Capital if Stop Loss hits:</strong> ₹<span id="capitalSL">-</span></div>
+          <div><strong>Capital if Target hits:</strong> ₹<span id="capitalTarget">-</span></div>
+        </div>
+
+        <h3>Intraday Trade (5x Leverage)</h3>
+        <div class="result-grid">
+          <div><strong>Quantity:</strong> <span id="qtyLeveraged">-</span></div>
+          <div><strong>Stop Loss:</strong> ₹<span id="slLeveraged">-</span></div>
+          <div><strong>Target:</strong> ₹<span id="targetLeveraged">-</span></div>
+          <div><strong>Capital Invested:</strong> ₹<span id="capitalInvested">-</span></div>
+          <div><strong>Capital if Stop Loss hits:</strong> ₹<span id="capitalSLLeveraged">-</span></div>
+          <div><strong>Capital if Target hits:</strong> ₹<span id="capitalTargetLeveraged">-</span></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Intraday Trade Planner • Built with HTML, CSS, JS & Google Sheets API</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
